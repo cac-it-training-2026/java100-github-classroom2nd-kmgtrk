@@ -22,5 +22,17 @@
 package lesson01.challenge03;
 
 public class Patisserie {
+	public static void main(String[] args) {
+
+		System.out.println("\n本日のおすすめ商品です。\n");
+		//		intを使うことで格納する変数を宣言
+		int citron = 30;
+		int chocolat = 30;
+		int pistache = 30;
+
+		System.out.println("シトロン     \\250 ・・・ 残り" + citron + "個");
+		System.out.println("ショコラ     \\280 ・・・ 残り" + chocolat + "個");
+		System.out.println("ピスターシュ \\320 ・・・ 残り" + pistache + "個");
+	}
 
 }
