@@ -75,14 +75,38 @@ package lesson03.challenge10;
 
 public class Explorer {
 
-        public static void main(String[] args) {
+	public static void main(String[] args) {
 
-                System.out.println("隊長：");
-                System.out.println("滝の前に着いたよ！\n");
+		System.out.println("隊長：");
+		System.out.println("滝の前に着いたよ！\n");
 
+		//      for	のネストによって時間と分を組み合わせる
+		// 時間（13時～16時）
+		for (int i = 13; i <= 16; i++) {
 
-                //ここにfor文のネスト、if文を利用した処理を記述する。
+			// 分（00分,15分,30分,45分）
+			for (int j = 0; j < 60; j += 15) {
 
+				// 最初の13:00と13:15と13:30は表示しない
+				if (i == 13 && (j == 0 || j == 15 || j == 30)) {
+					continue;//その回の処理をスキップして進む
+				}
 
-        }
+				// 16:30になったら終了メッセージ
+				if (i == 16 && j == 30) {
+					System.out.println("隊長：");
+					//%dは整数をそのまま表示、%2dは2桁の整数を表示
+					System.out.printf("%d:%2d 時間になったよ%n%n", i, j);
+					System.out.println("滝の水流が弱くなりました。\n");
+					System.out.println("やったー！宝物だー！");
+					break;
+				}
+
+				// 通常メッセージ
+				System.out.println("隊長：");
+				System.out.printf("%d:%02d 待ち遠しいな～%n%n", i, j);
+			}
+		}
+
+	}
 }
